@@ -1,11 +1,5 @@
-import React from "react";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-} from "../ui/dialog";
+import React from 'react';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '../ui/dialog';
 
 interface Props {
   visible: boolean;
@@ -15,17 +9,11 @@ interface Props {
   subtitle?: string;
 }
 
-const DialogCustomize = ({
-  visible,
-  onClose,
-  title,
-  subtitle,
-  children,
-}: Props) => {
+const DialogCustomize = ({ visible, onClose, title, subtitle, children }: Props) => {
   return (
     <Dialog
       open={visible}
-      onOpenChange={(open) => {
+      onOpenChange={open => {
         if (!open) onClose();
       }}
     >

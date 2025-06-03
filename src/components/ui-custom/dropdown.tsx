@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "../ui/dropdown-menu";
-import { Button } from "../ui/button";
-import { MoreHorizontal } from "lucide-react";
+} from '../ui/dropdown-menu';
+import { Button } from '../ui/button';
+import { MoreHorizontal } from 'lucide-react';
 
 type DropdownItem = {
   label: string;

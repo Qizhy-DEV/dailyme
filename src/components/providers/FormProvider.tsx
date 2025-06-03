@@ -1,16 +1,16 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { yupResolver } from "@hookform/resolvers/yup";
+import { yupResolver } from '@hookform/resolvers/yup';
 import {
   DefaultValues,
   FormProvider as FormProviderContext,
   useForm,
   UseFormReturn,
-} from "react-hook-form";
+} from 'react-hook-form';
 
 export interface Handler {
   title: string;
   fn?: any;
-  type: "button" | "submit";
+  type: 'button' | 'submit';
   className?: string;
   isPending?: boolean;
 }
@@ -20,16 +20,10 @@ interface Props {
   defaultValues: DefaultValues<any>;
   validationSchema: any;
   onSubmit: (data: any, fields: UseFormReturn) => void;
-  mode: "onBlur" | "onChange" | "onSubmit" | "onTouched" | "all";
+  mode: 'onBlur' | 'onChange' | 'onSubmit' | 'onTouched' | 'all';
 }
 
-export function FormProvider({
-  children,
-  defaultValues,
-  mode,
-  validationSchema,
-  onSubmit,
-}: Props) {
+export function FormProvider({ children, defaultValues, mode, validationSchema, onSubmit }: Props) {
   const fields = useForm({
     resolver: validationSchema && yupResolver(validationSchema),
     defaultValues: defaultValues,
@@ -42,11 +36,7 @@ export function FormProvider({
 
   return (
     <FormProviderContext {...fields}>
-      <form
-        onSubmit={fields.handleSubmit((data: any) =>
-          handleSubmit(data, fields)
-        )}
-      >
+      <form onSubmit={fields.handleSubmit((data: any) => handleSubmit(data, fields))}>
         {children}
       </form>
     </FormProviderContext>
