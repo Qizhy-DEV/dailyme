@@ -1,4 +1,4 @@
-import { Pagination } from '@src/queries/useTasksQuery';
+import { Pagination } from '@src/api/todo/queries/useTasksQuery';
 
 export const defaultPagination: Pagination = {
   page: 0,
